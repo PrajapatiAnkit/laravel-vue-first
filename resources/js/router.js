@@ -5,7 +5,7 @@ import Home from './components/pages/Home';
 import User from './components/pages/User';
 import Login from './components/Login';
 import App from './components/App'
-import Public from './components/Public'
+import Index from './components/Index'
 
 Vue.use(VueRouter);
 
@@ -15,7 +15,7 @@ export default new VueRouter({
     routes: [
         {
             path:'/',
-            component: Public,
+            component: Index,
             children:[
                 {
                     path: '',

@@ -4,7 +4,7 @@ require('./bootstrap');
 // window.Vue = require('vue');
 
 import router from './router';
-import Public from './components/Public';
+import Index from './components/Index';
 import Vue from 'vue';
 import store from './store';
 import progressbar from './progressbar';
@@ -26,7 +26,7 @@ router.beforeEach((to, from, next) => {
 
 const app = new Vue({
     el:'#main',
-    components:{Public},
+    components:{Index},
     router,
     store,
     sweetAlert,

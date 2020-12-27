@@ -20,15 +20,9 @@
     </style>
 </head>
 <body class="hold-transition sidebar-mini login-page">
-
 <div id="main">
-    <public></public>
+    <index></index>
 </div>
-
-
-
-<!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="{{asset('admin-lte/docs/assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
