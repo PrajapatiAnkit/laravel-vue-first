@@ -6,10 +6,10 @@ require('./bootstrap');
 import router from './router';
 import Index from './components/Index';
 import Vue from 'vue';
-import store from './store';
-import progressbar from './progressbar';
-import sweetAlert from './sweet-alert';
-import VForm from './VForm';
+import store from './imports/store';
+import progressbar from './imports/progressbar';
+import sweetAlert from './imports/sweet-alert';
+import VForm from './imports/VForm';
 
 
 /**

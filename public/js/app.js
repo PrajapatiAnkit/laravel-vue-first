@@ -42550,36 +42550,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/VForm.js":
-/*!*******************************!*\
-  !*** ./resources/js/VForm.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VForm; });
-/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
-/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-window.Form = vform__WEBPACK_IMPORTED_MODULE_0__["Form"];
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component(vform__WEBPACK_IMPORTED_MODULE_0__["HasError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["HasError"]);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component(vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"]);
-
-var VForm = function VForm() {
-  _classCallCheck(this, VForm);
-};
-
-
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -42593,10 +42563,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
-/* harmony import */ var _progressbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./progressbar */ "./resources/js/progressbar.js");
-/* harmony import */ var _sweet_alert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sweet-alert */ "./resources/js/sweet-alert.js");
-/* harmony import */ var _VForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./VForm */ "./resources/js/VForm.js");
+/* harmony import */ var _imports_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./imports/store */ "./resources/js/imports/store.js");
+/* harmony import */ var _imports_progressbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./imports/progressbar */ "./resources/js/imports/progressbar.js");
+/* harmony import */ var _imports_sweet_alert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./imports/sweet-alert */ "./resources/js/imports/sweet-alert.js");
+/* harmony import */ var _imports_VForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./imports/VForm */ "./resources/js/imports/VForm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
 
 
@@ -42613,7 +42583,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 
 _router__WEBPACK_IMPORTED_MODULE_0__["default"].beforeEach(function (to, from, next) {
   if (to.fullPath !== '/') {
-    if (!_store__WEBPACK_IMPORTED_MODULE_3__["default"].getters.token) {
+    if (!_imports_store__WEBPACK_IMPORTED_MODULE_3__["default"].getters.token) {
       next('/');
     }
   }
@@ -42626,10 +42596,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     Index: _components_Index__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   router: _router__WEBPACK_IMPORTED_MODULE_0__["default"],
-  store: _store__WEBPACK_IMPORTED_MODULE_3__["default"],
-  sweetAlert: _sweet_alert__WEBPACK_IMPORTED_MODULE_5__["default"],
-  progressbar: _progressbar__WEBPACK_IMPORTED_MODULE_4__["default"],
-  VForm: _VForm__WEBPACK_IMPORTED_MODULE_6__["default"]
+  store: _imports_store__WEBPACK_IMPORTED_MODULE_3__["default"],
+  sweetAlert: _imports_sweet_alert__WEBPACK_IMPORTED_MODULE_5__["default"],
+  progressbar: _imports_progressbar__WEBPACK_IMPORTED_MODULE_4__["default"],
+  VForm: _imports_VForm__WEBPACK_IMPORTED_MODULE_6__["default"]
 });
 
 /***/ }),
@@ -43190,10 +43160,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/progressbar.js":
-/*!*************************************!*\
-  !*** ./resources/js/progressbar.js ***!
-  \*************************************/
+/***/ "./resources/js/imports/VForm.js":
+/*!***************************************!*\
+  !*** ./resources/js/imports/VForm.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VForm; });
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+window.Form = vform__WEBPACK_IMPORTED_MODULE_0__["Form"];
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component(vform__WEBPACK_IMPORTED_MODULE_0__["HasError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["HasError"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component(vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_0__["AlertError"]);
+
+var VForm = function VForm() {
+  _classCallCheck(this, VForm);
+};
+
+
+
+/***/ }),
+
+/***/ "./resources/js/imports/progressbar.js":
+/*!*********************************************!*\
+  !*** ./resources/js/imports/progressbar.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -43225,6 +43225,105 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_progressbar__WEBPACK_IMPORTED
 
 var progressbar = function progressbar() {
   _classCallCheck(this, progressbar);
+};
+
+
+
+/***/ }),
+
+/***/ "./resources/js/imports/store.js":
+/*!***************************************!*\
+  !*** ./resources/js/imports/store.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
+  state: {
+    token: localStorage.getItem('token') || '',
+    loggedInUser: localStorage.getItem("loggedInUser")
+  },
+  getters: {
+    token: function token(state) {
+      return state.token;
+    },
+    loggedInUser: function loggedInUser(state) {
+      return JSON.parse(state.loggedInUser);
+    }
+  },
+  actions: {
+    setToken: function setToken(_ref, token) {
+      var commit = _ref.commit;
+      commit('setToken', token);
+    },
+    clearToken: function clearToken(_ref2) {
+      var commit = _ref2.commit;
+      commit('clearToken');
+    },
+    setLoggedInUser: function setLoggedInUser(_ref3, user) {
+      var commit = _ref3.commit;
+      commit('setLoggedInUser', JSON.stringify(user));
+    }
+  },
+  mutations: {
+    setToken: function setToken(state, token) {
+      state.token = token;
+      localStorage.setItem('token', token);
+    },
+    setLoggedInUser: function setLoggedInUser(state, user) {
+      state.loggedInUser = user;
+      localStorage.setItem("loggedInUser", user);
+    },
+    clearToken: function clearToken(state) {
+      state.token = '';
+      state.user = '';
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    }
+  }
+}));
+
+/***/ }),
+
+/***/ "./resources/js/imports/sweet-alert.js":
+/*!*********************************************!*\
+  !*** ./resources/js/imports/sweet-alert.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sweetAlert; });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a;
+var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: function didOpen(toast) {
+    toast.addEventListener('mouseenter', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.stopTimer);
+    toast.addEventListener('mouseleave', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.resumeTimer);
+  }
+});
+window.Toast = Toast;
+
+var sweetAlert = function sweetAlert() {
+  _classCallCheck(this, sweetAlert);
 };
 
 
@@ -43286,105 +43385,6 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     }]
   }]
 }));
-
-/***/ }),
-
-/***/ "./resources/js/store.js":
-/*!*******************************!*\
-  !*** ./resources/js/store.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-
-
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
-/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
-  state: {
-    token: localStorage.getItem('token') || '',
-    loggedInUser: localStorage.getItem("loggedInUser")
-  },
-  getters: {
-    token: function token(state) {
-      return state.token;
-    },
-    loggedInUser: function loggedInUser(state) {
-      return JSON.parse(state.loggedInUser);
-    }
-  },
-  actions: {
-    setToken: function setToken(_ref, token) {
-      var commit = _ref.commit;
-      commit('setToken', token);
-    },
-    clearToken: function clearToken(_ref2) {
-      var commit = _ref2.commit;
-      commit('clearToken');
-    },
-    setLoggedInUser: function setLoggedInUser(_ref3, user) {
-      var commit = _ref3.commit;
-      commit('setLoggedInUser', JSON.stringify(user));
-    }
-  },
-  mutations: {
-    setToken: function setToken(state, token) {
-      state.token = token;
-      localStorage.setItem('token', token);
-    },
-    setLoggedInUser: function setLoggedInUser(state, user) {
-      state.loggedInUser = user;
-      localStorage.setItem("loggedInUser", user);
-    },
-    clearToken: function clearToken(state) {
-      state.token = '';
-      state.user = '';
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-    }
-  }
-}));
-
-/***/ }),
-
-/***/ "./resources/js/sweet-alert.js":
-/*!*************************************!*\
-  !*** ./resources/js/sweet-alert.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sweetAlert; });
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a;
-var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: function didOpen(toast) {
-    toast.addEventListener('mouseenter', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.stopTimer);
-    toast.addEventListener('mouseleave', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.resumeTimer);
-  }
-});
-window.Toast = Toast;
-
-var sweetAlert = function sweetAlert() {
-  _classCallCheck(this, sweetAlert);
-};
-
-
 
 /***/ }),
 
