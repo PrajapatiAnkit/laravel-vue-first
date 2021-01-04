@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('cache/clear', 'CommonController@cacheClear')->name('cacheClear');
+
 Route::post('login','AuthController@login');
 Route::post('logout','AuthController@logout');
 Route::post('checktoken','AuthController@checkToken');
