@@ -6,6 +6,7 @@ import User from './components/pages/User';
 import Login from './components/Login';
 import App from './components/App'
 import Index from './components/Index'
+import {BASE_URL} from "./config";
 
 Vue.use(VueRouter);
 
@@ -14,22 +15,22 @@ export default new VueRouter({
     mode:'history',
     routes: [
         {
-            path:'/',
+            path:'',
             component: Index,
             children:[
                 {
-                    path: '',
+                    path: '/',
                     component: Login,
                     name:'login'
                 },
             ]
         },
         {
-            path: '/',
+            path: BASE_URL.APP_URL,
             component: App,
             children: [
                 {
-                    path:'home',
+                    path:'/home',
                     name:'home',
                     component: Home,
                     meta: {
@@ -38,7 +39,7 @@ export default new VueRouter({
                 },
                 {
                     path:'/users',
-                    name:'user',
+                    name:'users',
                     component: User,
                     meta: {
                         authGuard: true

@@ -19,7 +19,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('cache/clear', 'CommonController@cacheClear')->name('cacheClear');
-
+/*
+ |-------------------------------------------------------------------------------
+ | Authenticates the user login
+ |-------------------------------------------------------------------------------
+ | URL:            /api/login
+ | Controller:     AuthController@login
+ | Method:         POST
+ | Description:    Authenticates the user login
+ */
 Route::post('login','AuthController@login');
 Route::post('logout','AuthController@logout');
 Route::post('checktoken','AuthController@checkToken');

@@ -1955,6 +1955,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ "./resources/js/config.js");
 //
 //
 //
@@ -2005,6 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2019,7 +2021,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     if (this.$store.state.token !== '') {
-      axios.post('/api/checktoken', {
+      axios.post(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'checktoken', {
         token: this.$store.state.token
       }).then(function (response) {
         if (response) {
@@ -2037,7 +2039,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.$Progress.start();
-      axios.post('/api/login', this.credentials).then(function (response) {
+      axios.post(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'login', this.credentials).then(function (response) {
         if (response.data.success) {
           _this2.$store.commit('setToken', response.data.access_token); //this.$store.commit('setUser',response.data.user);
 
@@ -2048,7 +2050,9 @@ __webpack_require__.r(__webpack_exports__);
 
           _this2.loginFailed = false;
 
-          _this2.$router.push("/home");
+          _this2.$router.push({
+            name: 'home'
+          });
         }
       })["catch"](function (error) {
         console.log(error);
@@ -2071,6 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
 //
 //
 //
@@ -2125,16 +2130,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     logout: function logout() {
       var _this = this;
 
-      axios.post('/api/logout').then(function (response) {
+      axios.post(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'logout').then(function (response) {
         if (response.data.success) {
           _this.$store.dispatch('clearToken');
 
-          _this.$router.push('/');
+          _this.$router.push({
+            name: 'login'
+          });
         }
       })["catch"](function (error) {});
     }
@@ -2214,6 +2222,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
 //
 //
 //
@@ -2328,6 +2337,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2355,7 +2365,7 @@ __webpack_require__.r(__webpack_exports__);
     saveUser: function saveUser() {
       var _this = this;
 
-      this.form.post('/api/users/create').then(function (_ref) {
+      this.form.post(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'users/create').then(function (_ref) {
         var data = _ref.data;
         Toast.fire({
           icon: 'success',
@@ -2375,7 +2385,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.$Progress.start();
-      axios.get('/api/users/get', {
+      axios.get(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'users/get', {
         token: this.$store.state.token
       }).then(function (response) {
         _this2.users = response.data.data;
@@ -2387,7 +2397,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       this.$Progress.start();
-      axios.get('/api/users/info/' + userId).then(function (response) {
+      axios.get(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'users/info/' + userId).then(function (response) {
         var user = response.data.data;
 
         _this3.openUserModal();
@@ -2418,7 +2428,7 @@ __webpack_require__.r(__webpack_exports__);
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.isConfirmed) {
-          axios.post('/api/users/delete', {
+          axios.post(_config__WEBPACK_IMPORTED_MODULE_0__["BASE_URL"].API_URL + 'users/delete', {
             userId: userId
           }).then(function (response) {
             Toast.fire({
@@ -25416,7 +25426,10 @@ var render = function() {
                 [
                   _c(
                     "router-link",
-                    { staticClass: "nav-link", attrs: { to: "/home" } },
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: { name: "home" } }
+                    },
                     [
                       _c("i", { staticClass: "nav-icon fas fa-home" }),
                       _vm._v(" "),
@@ -25437,7 +25450,10 @@ var render = function() {
                 [
                   _c(
                     "router-link",
-                    { staticClass: "nav-link", attrs: { to: "/users" } },
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: { name: "users" } }
+                    },
                     [
                       _c("i", { staticClass: "nav-icon fas fa-users" }),
                       _vm._v(" "),
@@ -42601,6 +42617,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   progressbar: _imports_progressbar__WEBPACK_IMPORTED_MODULE_4__["default"],
   VForm: _imports_VForm__WEBPACK_IMPORTED_MODULE_6__["default"]
 });
+console.log("environment - " + "development");
 
 /***/ }),
 
@@ -43160,6 +43177,41 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/config.js":
+/*!********************************!*\
+  !*** ./resources/js/config.js ***!
+  \********************************/
+/*! exports provided: BASE_URL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
+/*
+    Defines the API route we are using.
+*/
+var api_url = '';
+var app_url = '';
+
+switch ("development") {
+  case 'development':
+    api_url = 'http://127.0.0.1:8000/api/';
+    app_url = 'http://127.0.0.1:8000/';
+    break;
+
+  case 'production':
+    api_url = 'https://codingbirdsonline.com/work/lara-vue/public/api/';
+    app_url = 'https://codingbirdsonline.com/work/lara-vue/public/';
+    break;
+}
+
+var BASE_URL = {
+  API_URL: api_url,
+  APP_URL: app_url
+};
+
+/***/ }),
+
 /***/ "./resources/js/imports/VForm.js":
 /*!***************************************!*\
   !*** ./resources/js/imports/VForm.js ***!
@@ -43347,6 +43399,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Login */ "./resources/js/components/Login.vue");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.vue");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./config */ "./resources/js/config.js");
+
 
 
 
@@ -43358,18 +43412,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
-    path: '/',
+    path: '',
     component: _components_Index__WEBPACK_IMPORTED_MODULE_6__["default"],
     children: [{
-      path: '',
+      path: '/',
       component: _components_Login__WEBPACK_IMPORTED_MODULE_4__["default"],
       name: 'login'
     }]
   }, {
-    path: '/',
+    path: _config__WEBPACK_IMPORTED_MODULE_7__["BASE_URL"].APP_URL,
     component: _components_App__WEBPACK_IMPORTED_MODULE_5__["default"],
     children: [{
-      path: 'home',
+      path: '/home',
       name: 'home',
       component: _components_pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"],
       meta: {
@@ -43377,7 +43431,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       }
     }, {
       path: '/users',
-      name: 'user',
+      name: 'users',
       component: _components_pages_User__WEBPACK_IMPORTED_MODULE_3__["default"],
       meta: {
         authGuard: true

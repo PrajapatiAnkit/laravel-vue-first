@@ -34,3 +34,4 @@ const app = new Vue({
     VForm
 });
 
+console.log("environment - "+ process.env.MIX_APP_ENV);
