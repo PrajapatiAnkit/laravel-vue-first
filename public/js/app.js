@@ -42598,9 +42598,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
  */
 
 _router__WEBPACK_IMPORTED_MODULE_0__["default"].beforeEach(function (to, from, next) {
-  if (to.fullPath !== '/') {
+  if (to.name !== 'login') {
     if (!_imports_store__WEBPACK_IMPORTED_MODULE_3__["default"].getters.token) {
-      next('/');
+      next({
+        name: 'login'
+      });
     }
   }
 
@@ -43399,8 +43401,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Login */ "./resources/js/components/Login.vue");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Index */ "./resources/js/components/Index.vue");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./config */ "./resources/js/config.js");
-
 
 
 
@@ -43412,18 +43412,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
-    path: '',
+    path: '/login',
     component: _components_Index__WEBPACK_IMPORTED_MODULE_6__["default"],
     children: [{
-      path: '/',
+      path: '',
       component: _components_Login__WEBPACK_IMPORTED_MODULE_4__["default"],
       name: 'login'
     }]
   }, {
-    path: _config__WEBPACK_IMPORTED_MODULE_7__["BASE_URL"].APP_URL,
+    path: '/',
     component: _components_App__WEBPACK_IMPORTED_MODULE_5__["default"],
     children: [{
-      path: '/home',
+      path: 'home',
       name: 'home',
       component: _components_pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"],
       meta: {
