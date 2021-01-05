@@ -77,7 +77,8 @@
         methods:{
             login(){
                 this.$Progress.start();
-               axios.post('/api/login',this.credentials)
+                let endPoint = `http://codingbirdsonline.com/work/lara-vue/public`;
+               axios.post(`${endPoint}/api/login`,this.credentials)
                 .then(response => {
                     if (response.data.success){
                         this.$store.commit('setToken',response.data.access_token);
