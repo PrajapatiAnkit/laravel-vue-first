@@ -6,7 +6,6 @@ import User from './components/pages/User';
 import Login from './components/Login';
 import App from './components/App'
 import Index from './components/Index'
-import {BASE_URL} from "./config";
 
 Vue.use(VueRouter);
 
@@ -15,22 +14,22 @@ export default new VueRouter({
     mode:'history',
     routes: [
         {
-            path:'',
+            path:'/login',
             component: Index,
             children:[
                 {
-                    path: '/',
+                    path: '',
                     component: Login,
                     name:'login'
                 },
             ]
         },
         {
-            path: BASE_URL.APP_URL,
+            path: '/',
             component: App,
             children: [
                 {
-                    path:'/home',
+                    path:'home',
                     name:'home',
                     component: Home,
                     meta: {

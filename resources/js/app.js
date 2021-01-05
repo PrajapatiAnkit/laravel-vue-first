@@ -16,9 +16,9 @@ import VForm from './imports/VForm';
  * Protencting public access
  */
 router.beforeEach((to, from, next) => {
-    if (to.fullPath !== '/') {
+    if (to.name !== 'login') {
         if (!store.getters.token) {
-            next('/');
+            next({name:'login'});
         }
     }
     next();
