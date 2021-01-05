@@ -44,7 +44,7 @@
             ])
         },
        mounted() {
-          console.log(this.$store.getters.loggedInUser);
+           console.log(this.$store.getters.loggedInUser);
        }
     }
 </script>

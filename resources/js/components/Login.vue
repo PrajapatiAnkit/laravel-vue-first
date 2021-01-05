@@ -49,6 +49,8 @@
 </template>
 
 <script>
+    import {BASE_URL} from "../config";
+
     export default {
         data(){
             return {
@@ -61,7 +63,7 @@
         },
         mounted(){
             if (this.$store.state.token !== ''){
-                axios.post('/api/checktoken',{ token:this.$store.state.token })
+                axios.post(BASE_URL.API_URL+'checktoken',{ token:this.$store.state.token })
                     .then(response => {
                         if (response){
                             this.$router.push("/home").catch(()=>{});
@@ -77,8 +79,7 @@
         methods:{
             login(){
                 this.$Progress.start();
-                let endPoint = `http://codingbirdsonline.com/work/lara-vue/public`;
-               axios.post(`${endPoint}/api/login`,this.credentials)
+               axios.post(BASE_URL.API_URL+'login',this.credentials)
                 .then(response => {
                     if (response.data.success){
                         this.$store.commit('setToken',response.data.access_token);
@@ -86,7 +87,7 @@
                         this.$store.dispatch('setLoggedInUser',response.data.user);
                         this.$Progress.finish();
                         this.loginFailed = false;
-                        this.$router.push("/home");
+                        this.$router.push({name:'home'});
                     }
                 })
                 .catch(error => {

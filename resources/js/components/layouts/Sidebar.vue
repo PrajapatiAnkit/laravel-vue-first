@@ -24,7 +24,7 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <router-link to="/home" class="nav-link">
+                        <router-link :to="{name:'home'}" class="nav-link">
                             <i class="nav-icon fas fa-home"></i>
                             <p>
                                 Dashboard
@@ -32,7 +32,7 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/users" class="nav-link">
+                        <router-link :to="{name:'users'}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
@@ -54,14 +54,16 @@
 </template>
 <script>
 
+    import {BASE_URL} from "../../config";
+
     export default {
         methods:{
             logout(){
-                axios.post('/api/logout')
+                axios.post(BASE_URL.API_URL+'logout')
                     .then(response => {
                         if (response.data.success){
                             this.$store.dispatch('clearToken');
-                            this.$router.push('/');
+                            this.$router.push({name:'login'});
                         }
                     })
                     .catch(error => {

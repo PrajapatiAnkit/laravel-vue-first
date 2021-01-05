@@ -113,6 +113,7 @@
     </div>
 </template>
 <script>
+    import { BASE_URL } from '../../config';
     export default {
         data(){
             return {
@@ -138,7 +139,7 @@
                 $("#userModal").modal('show');
             },
             saveUser() {
-                this.form.post('/api/users/create')
+                this.form.post(BASE_URL.API_URL+'users/create')
                     .then(({ data }) => {
                         Toast.fire({
                             icon: 'success',
@@ -154,14 +155,14 @@
             },
             loadUsers(){
                 this.$Progress.start();
-                axios.get('/api/users/get',{token:this.$store.state.token}).then((response) => {
+                axios.get(BASE_URL.API_URL+'users/get',{token:this.$store.state.token}).then((response) => {
                     this.users = response.data.data;
                     this.$Progress.finish();
                 })
             },
             editUser(userId){
                 this.$Progress.start();
-                axios.get('/api/users/info/'+userId).then((response) => {
+                axios.get(BASE_URL.API_URL+'users/info/'+userId).then((response) => {
                     let user = response.data.data;
                     this.openUserModal();
                     this.editMode = true;
@@ -187,7 +188,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.post('/api/users/delete',{
+                        axios.post(BASE_URL.API_URL+'users/delete',{
                             userId:userId,
                         }).then((response) => {
                             Toast.fire({
