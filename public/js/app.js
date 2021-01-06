@@ -42619,7 +42619,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   progressbar: _imports_progressbar__WEBPACK_IMPORTED_MODULE_4__["default"],
   VForm: _imports_VForm__WEBPACK_IMPORTED_MODULE_6__["default"]
 });
-console.log("environment - " + "development");
+console.log("environment - " + "production");
 
 /***/ }),
 
@@ -43195,7 +43195,7 @@ __webpack_require__.r(__webpack_exports__);
 var api_url = '';
 var app_url = '';
 
-switch ("development") {
+switch ("production") {
   case 'development':
     api_url = 'http://127.0.0.1:8000/api/';
     app_url = 'http://127.0.0.1:8000/';
